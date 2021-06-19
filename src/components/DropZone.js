@@ -31,6 +31,13 @@ function DropZone() {
   const resized72Ref = useRef(null);
   canvasRefs.push(resized72Ref);
 
+  const resized32Ref = useRef(null);
+  canvasRefs.push(resized32Ref);
+  const resized64Ref = useRef(null);
+  canvasRefs.push(resized64Ref);
+  const resized184Ref = useRef(null);
+  canvasRefs.push(resized184Ref);
+
   const handleChangeFile = e => {
     e.preventDefault();
     e.stopPropagation();
@@ -174,6 +181,20 @@ function DropZone() {
           <div onClick={() => handleSaveImage(resized28Ref)} style={{ cursor: 'pointer' }}>
             <canvas className="ResizedCanvas By28" width="28" height="28" ref={resized28Ref}/>
             <div className="ImageSize">28x28 ({bytesToKilobytes(estimateCanvasFileSize(resized28Ref.current))}KB)</div>
+          </div>
+        </div>
+        <div className="ResizedRow">
+          <div onClick={() => handleSaveImage(resized32Ref)} style={{ cursor: 'pointer' }}>
+            <canvas className="ResizedCanvas By32" width="32" height="32" ref={resized32Ref}/>
+            <div className="ImageSize">32x32 ({bytesToKilobytes(estimateCanvasFileSize(resized32Ref.current))}KB)</div>
+          </div>
+          <div onClick={() => handleSaveImage(resized64Ref)} style={{ cursor: 'pointer' }}>
+            <canvas className="ResizedCanvas By64" width="64" height="64" ref={resized64Ref}/>
+            <div className="ImageSize">64x64 ({bytesToKilobytes(estimateCanvasFileSize(resized64Ref.current))}KB)</div>
+          </div>
+          <div onClick={() => handleSaveImage(resized184Ref)} style={{ cursor: 'pointer' }}>
+            <canvas className="ResizedCanvas By184" width="184" height="184" ref={resized184Ref}/>
+            <div className="ImageSize">184x184 ({bytesToKilobytes(estimateCanvasFileSize(resized184Ref.current))}KB)</div>
           </div>
         </div>
         <div className="ResizedRow">
